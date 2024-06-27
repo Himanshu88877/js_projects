@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+  
+    #main {
+      width: 300px;
+      border: 5px solid black;
+      height: 450px;
+      margin: auto 500px;
+      
+    }
+
+    #display {
+      width: 80%;
+      border: 2px solid black;
+      height: 60px;
+      margin: 10px 23px;
+      font-size: xx-large;
+      text-align: right;
+      font-weight: bold;
+    }
+
+    .container {
+      width: 200px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin: auto 45px;
+    }
+
+    .cal-box {
+      width: 50px;
+      height: 50px;
+      font-size: x-large;
+      font-weight: bold;
+      border: 2px solid black;
+      text-align: center;
+      background-color: gainsboro;
+    }
+    .cal-box:active{
+      background-color:darkgray;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <h1 style="text-align: center;">Simple Calculator</h1>
+
+    <div id="main">
+      <label for="display">
+      <input type="text" id="display" readonly>
+    </label>
+
+      <div class="container">
+        <div class="cal-box" id="C" onclick="value=' ';cal()">C</div>
+        <div class="cal-box" id="1" onclick="value+='1';cal()">1</div>
+        <div class="cal-box" id="2" onclick="value+='2';cal()">2</div>
+        <div class="cal-box" id="+" onclick="value+='+';cal()">+</div>
+        <div class="cal-box" id="3" onclick="value+='3';cal()">3</div>
+        <div class="cal-box" id="4" onclick="value+='4';cal()">4</div>
+        <div class="cal-box" id="-" onclick="value+='-';cal()">-</div>
+        <div class="cal-box" id="5" onclick="value+='5';cal()">5</div>
+        <div class="cal-box" id="6" onclick="value+='6';cal()">6</div>
+        <div class="cal-box" id="*" onclick="value+='*';cal()">*</div>
+        <div class="cal-box" id="7" onclick="value+='7';cal()">7</div>
+        <div class="cal-box" id="8" onclick="value+='8';cal()">8</div>
+        <div class="cal-box" id="/" onclick="value+='/';cal()">/</div>
+        <div class="cal-box" id="=" onclick="finalresult()">=</div>
+        <div class="cal-box" id="9" onclick="value+='9';cal()">9</div>
+        <div class="cal-box" id="0" onclick="value+='0';cal()">0</div>
+        <div class="cal-box" id="." onclick="value+='.';cal()">.</div>
+        <div class="cal-box" id="del" onclick="value=value.slice(0, value.length-1);cal()">del</div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script>
+    let value = "";
+
+    function cal(){
+       document.querySelector('#display').value=value;
+    }
+    function finalresult(){
+      document.querySelector('#display').value=eval(value);
+    }
+    
+    
+
+   
+
+
+  </script>
+</body>
+
+</htm>
